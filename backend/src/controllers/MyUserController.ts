@@ -25,6 +25,7 @@ const updateCurrentUser = async (req: Request, res: Response) => {
   try {
     const { name, addressLine1, country, city } = req.body;
     const user = await User.findById(req.userId);
+    console.log("going");
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
